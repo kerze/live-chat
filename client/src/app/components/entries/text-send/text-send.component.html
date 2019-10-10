@@ -1,0 +1,13 @@
+<div class="text-area" [ngClass]="className">
+  <div class="container">
+    <div class="col-12 text-area-wrap">
+      <textarea
+        [(ngModel)]="message"
+        [ngClass]="{ error: notValid }"
+        (ngModelChange)="clearValid()"
+        placeholder="Enter you message"
+      ></textarea>
+      <button class="btn btn-success" (click)="send()"></button>
+    </div>
+  </div>
+</div>

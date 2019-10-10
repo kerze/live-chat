@@ -1,0 +1,21 @@
+<div class="entries-item">
+  <h4 (click)="openM(entry.user)">{{ entry.user.first_name }}</h4>
+  <h5 (click)="openM(entry.user)">{{ entry.user.last_name }}</h5>
+  <p>{{ entry.text }}</p>
+  <time>{{ entry.created_at }}</time>
+  <div
+    class="replied-message"
+    *ngIf="entry.replied_id"
+    (click)="open(entry.id)"
+  >
+    <span>{{ entry.replied_id.user.first_name }}</span
+    ><span>{{ entry.replied_id.user.last_name }}</span>
+    <p [ngClass]="{ hidden: entry.replied_id.hidden }">
+      {{ entry.replied_id.text }}
+    </p>
+  </div>
+  <app-text-send
+    [className]="'reply-send'"
+    (sendMessage)="retryMessage($event, entry.id)"
+  ></app-text-send>
+</div>

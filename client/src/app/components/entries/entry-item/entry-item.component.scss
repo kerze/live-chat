@@ -1,0 +1,32 @@
+.entries-item {
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  h4,
+  h5 {
+    cursor: pointer;
+  }
+  button {
+    float: right;
+  }
+  .replied-message {
+    background: #ddd;
+    padding: 15px 15px 1px;
+    border-radius: 7px;
+    margin-top: 10px;
+    span {
+      margin-right: 10px;
+    }
+    p {
+      font-style: italic;
+      &.hidden {
+        width: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

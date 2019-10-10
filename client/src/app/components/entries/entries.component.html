@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="entries-wrap">
+    <app-entry-item
+      *ngFor="let entry of entriesList | paginate: config"
+      (openMessage)="openMessage($event)"
+      (openModal)="openModal($event)"
+      [entry]="entry"
+      [currentUser]="currentUser"
+    ></app-entry-item>
+    <div class="text-center">
+      <pagination-controls
+        (pageChange)="pageChanged($event)"
+      ></pagination-controls>
+    </div>
+    <app-text-send
+      [className]="'main-send'"
+      (sendMessage)="sendMessage($event)"
+    ></app-text-send>
+  </div>
+</div>
+<app-modal
+  [showModal]="showModal"
+  [userModal]="userModal"
+  (closeModal)="closeModal($event)"
+></app-modal>

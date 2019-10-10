@@ -1,0 +1,12 @@
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+  &.show {
+    display: block;
+  }
+  .modal-footer {
+    textarea {
+      width: 100%;
+      resize: none;
+    }
+  }
+}

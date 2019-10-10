@@ -1,0 +1,39 @@
+<div
+  class="modal fade"
+  [ngClass]="{ show: showModal }"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{ userModal?.first_name }} {{ userModal?.last_name }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" (click)="close()">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <textarea></textarea>
+        <button class="btn btn-success">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
